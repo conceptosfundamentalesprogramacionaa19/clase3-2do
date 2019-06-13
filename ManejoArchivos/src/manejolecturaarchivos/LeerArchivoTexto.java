@@ -16,13 +16,17 @@ public class LeerArchivoTexto {
         // 1. Se abre el archivo
         try // lee registros del archivo, usando el objeto Scanner
         {
-            Scanner entrada = new Scanner(new File("data/datos.txt"));
-
+            // instalar un editor tipo SublimeText
+            // Scanner entrada = new Scanner(new File("data/datos.txt"));
+            Scanner entrada = new Scanner(new File("datos/nacimientos2014_001.csv"));
+            System.out.println(entrada.hasNext());
+            System.out.println("a");
             while (entrada.hasNext()) {
                 String linea = entrada.nextLine();
                 System.out.println(linea);
                 ArrayList<String> linea_partes = new ArrayList<>(
-                        Arrays.asList(linea.split(";")));
+                        Arrays.asList(linea.split("\\|")));
+                System.out.println(linea_partes.size());
                 System.out.println(linea_partes);
 
             } // fin de while
